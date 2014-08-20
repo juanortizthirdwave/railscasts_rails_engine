@@ -1,5 +1,6 @@
 class SimulateController < ApplicationController
   def failure
-    raise "Simulate and exception"
+    message = ["Simulate and exception", "Different simulated exception"].sample
+    raise "#{message}"
   end
 end
