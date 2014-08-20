@@ -1,6 +1,13 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
 <h1>Failures</h1>
 <ul>
   <% @failures.each do |failure| %>
     <li><%= failure.message %></li>
   <%end%>
 </ul>
+<%# the paths are for the engine%>
+<p><%= link_to "Failures", root_url %></p> 
+<%# using main_app before a path points to the app that is hosting the engine%>
+<p><%= link_to "Simulate Failure", main_app.simulate_failure_path %></p>
